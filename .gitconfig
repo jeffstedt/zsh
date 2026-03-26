@@ -1,0 +1,5 @@
+[alias]
+	please = push --force-with-lease
+	plz = push --force-with-lease
+	ref = "!sh -c '"$(git symbolic-ref --short HEAD | sed 's|/|: |; s|-| |g')"'"
+	pr = "!f() { open https://github.com/jeffstedt/$(basename $(git rev-parse --show-toplevel))/pull/$(git rev-parse --abbrev-ref HEAD); };f"
